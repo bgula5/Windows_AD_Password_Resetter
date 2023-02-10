@@ -41,9 +41,8 @@ def change_password(username, newpass):
 
 def email_tech(error, username):
     email = win32.Dispatch('outlook.application').CreateItem(0)
-    tech_email = 'tech@supportemail.com'
     Body = f'<hl>  <font size="+2">{error} for user {username} </font></hl>'
-    email.to = tech_email
+    email.to = 'tech@supportemail.com'
     email.Subject = 'Password Creation Script'
     email.htmlBody = Body
     email.Display()
